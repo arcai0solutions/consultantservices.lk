@@ -15,7 +15,7 @@ const Preloader = ({ onComplete }: PreloaderProps) => {
 
     useEffect(() => {
         let currentIndex = 0;
-        // 45 characters in 2s = ~44ms per character
+        // 45 characters in 2.3s = ~51ms per character
         const typingInterval = setInterval(() => {
             if (currentIndex <= fullText.length) {
                 setDisplayedText(fullText.slice(0, currentIndex));
@@ -29,7 +29,7 @@ const Preloader = ({ onComplete }: PreloaderProps) => {
                     onComplete();
                 }, 500);
             }
-        }, 44);
+        }, 51);
 
         return () => clearInterval(typingInterval);
     }, [onComplete]);
@@ -41,7 +41,6 @@ const Preloader = ({ onComplete }: PreloaderProps) => {
             <div className="text-center px-6">
                 <h1
                     className="text-2xl md:text-4xl lg:text-5xl font-bold text-white leading-tight"
-                    style={{ fontFamily: 'StackSansNotch, sans-serif' }}
                 >
                     {displayedText}
                     <span
