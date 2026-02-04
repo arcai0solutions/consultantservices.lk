@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 interface PreloaderProps {
     onComplete: () => void;
@@ -10,8 +10,13 @@ const Preloader = ({ onComplete }: PreloaderProps) => {
     const [displayedText, setDisplayedText] = useState('');
     const [isComplete, setIsComplete] = useState(false);
     const [isFading, setIsFading] = useState(false);
-
+    
+    const onCompleteRef = useRef(onComplete);
     const fullText = 'Welcome to Your Corporate Compliance Partner';
+
+    useEffect(() => {
+        onCompleteRef.current = onComplete;
+    }, [onComplete]);
 
     useEffect(() => {
         let currentIndex = 0;
@@ -26,13 +31,15 @@ const Preloader = ({ onComplete }: PreloaderProps) => {
                 setIsFading(true);
                 // Fade out and call onComplete
                 setTimeout(() => {
-                    onComplete();
+                    if (onCompleteRef.current) {
+                        onCompleteRef.current();
+                    }
                 }, 500);
             }
         }, 51);
 
         return () => clearInterval(typingInterval);
-    }, [onComplete]);
+    }, []);
 
     return (
         <div

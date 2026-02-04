@@ -50,7 +50,7 @@ const services = [
 ];
 
 const ServicesSection = () => {
-    const [activeService, setActiveService] = useState('01');
+    const [activeService, setActiveService] = useState('');
 
     return (
         <section className="py-24 bg-white text-[#0B1B32] overflow-hidden font-sans">
