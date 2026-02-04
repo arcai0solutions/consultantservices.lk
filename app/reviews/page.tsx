@@ -73,9 +73,8 @@ export default function ReviewsPage() {
                         ]}
                         displayItemNumbering={false}
                         socialItems={[
-                            { label: 'Twitter', link: 'https://twitter.com' },
-                            { label: 'GitHub', link: 'https://github.com' },
-                            { label: 'LinkedIn', link: 'https://linkedin.com' }
+                            { label: 'Facebook', link: 'https://www.facebook.com/people/Secretaries-Consultant-Services/100081628302029/' },
+                            { label: 'LinkedIn', link: 'https://www.linkedin.com/company/secretaries-consultant-services' }
                         ]}
                         menuButtonColor="#ffffff"
                         colors={['#0a192f', '#112240', '#0a192f']}

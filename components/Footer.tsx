@@ -120,7 +120,7 @@ const Footer = () => {
                     </div>
                     <div className="flex items-center gap-1">
                         <span>Powered by</span>
-                        <a href="#" className="text-white hover:underline">Next.js</a>
+                        <span className="text-white">Next.js</span>
                     </div>
                 </div>
             </div>
