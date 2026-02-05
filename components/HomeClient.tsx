@@ -1,8 +1,10 @@
 'use client';
 
 import { useState, useRef, useCallback } from 'react';
+import Link from 'next/link';
 import StaggeredMenu from '@/components/StaggeredMenu';
 import Preloader from '@/components/Preloader';
+import { Button } from '@/components/ui/button';
 
 interface HomeClientProps {
     children: React.ReactNode;
@@ -86,16 +88,28 @@ export default function HomeClient({ children }: HomeClientProps) {
                         </div>
 
                         {/* Hero Content */}
-                        <div className="relative z-10 flex flex-col items-start justify-end h-full px-8 md:px-12 lg:px-16 pb-24 md:pb-32 lg:pb-40 text-left">
+                        <div className="relative z-10 flex flex-col items-start justify-center md:justify-end h-full px-8 md:px-12 lg:px-16 md:pb-32 lg:pb-40 text-left">
                             <h1
                                 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-4 max-w-4xl"
                                 style={{ fontFamily: 'StackSansNotch, sans-serif' }}
                             >
                                 Your Corporate Compliance Partner
                             </h1>
-                            <p className="text-lg md:text-xl text-white/90 max-w-2xl leading-relaxed">
+                            <p className="text-lg md:text-xl text-white/90 max-w-2xl leading-relaxed text-left">
                                 From company registration to ongoing statutory compliance, we handle the regulatory work with accuracy, confidentiality, and speed so you can focus on growth.
                             </p>
+                            <div className="flex flex-row gap-4 mt-12">
+                                <Button asChild size="lg" className="bg-white text-black hover:bg-white/90 font-semibold text-lg px-8">
+                                    <Link href="/services">
+                                        Learn More
+                                    </Link>
+                                </Button>
+                                <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white/20 hover:text-white bg-transparent font-semibold text-lg px-8">
+                                    <Link href="/contact">
+                                        Contact Us
+                                    </Link>
+                                </Button>
+                            </div>
                         </div>
                     </div>
                 </section>
