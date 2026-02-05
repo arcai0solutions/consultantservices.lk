@@ -9,7 +9,7 @@ const AboutSection = () => {
 
                     {/* Main Heading Content */}
                     <div className="relative w-full">
-                        <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight text-[#0B1B32] mb-8">
+                        <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight text-[#0B1B32] mb-12">
                             Who are we?
                         </h2>
                         <h3 className="text-xl md:text-3xl lg:text-4xl font-bold leading-tight text-justify text-foreground relative z-10">
