@@ -124,15 +124,6 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-
-            {/* Bottom Right Image */}
-            <div className="absolute bottom-0 right-[30rem]  z-20 pointer-events-none opacity-100 mix-blend-normal">
-                <img
-                    src="/footer-img.png"
-                    alt=""
-                    className="w-32 md:w-64 lg:w-96 object-contain"
-                />
-            </div>
         </footer>
     );
 };
