@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import StaggeredMenu from '@/components/StaggeredMenu';
 
 export default function PageHeader() {
@@ -18,10 +19,11 @@ export default function PageHeader() {
     const logoContent = (
         <Link href="/">
             <div className={`relative rounded-full overflow-hidden border-2 border-white/20 transition-all duration-500 ease-in-out cursor-pointer ${isScrolled ? 'w-20 h-20' : 'w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24'}`}>
-                <img
+                <Image
                     src="/logo.jpg"
                     alt="Logo"
-                    className={`w-full h-full object-cover transition-transform duration-500 ease-in-out ${isScrolled ? 'scale-100' : 'scale-150'}`}
+                    fill
+                    className={`object-cover transition-transform duration-500 ease-in-out ${isScrolled ? 'scale-100' : 'scale-150'}`}
                 />
             </div>
         </Link>

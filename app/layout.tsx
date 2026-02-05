@@ -1,8 +1,14 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import localFont from 'next/font/local';
 
 const inter = Inter({ subsets: ['latin'] });
+const stackSans = localFont({
+  src: './fonts/StackSansNotch-VariableFont_wght.ttf',
+  variable: '--font-stack-sans',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://consultantservices.lk'),
@@ -89,7 +95,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} overflow-x-hidden`}>{children}</body>
+      <body className={`${inter.className} ${stackSans.variable} overflow-x-hidden`}>{children}</body>
     </html>
   );
 }

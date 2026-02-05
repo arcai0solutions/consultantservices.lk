@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Plus } from 'lucide-react';
 
 const services = [
@@ -60,7 +61,6 @@ const ServicesSection = () => {
                     {/* Top Section */}
                     <div className="flex flex-col items-center md:items-start relative">
 
-
                         {/* Main Heading */}
                         <div className="mt-8 flex flex-col items-center md:items-start">
                             <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight text-[#0B1B32]">
@@ -90,15 +90,13 @@ const ServicesSection = () => {
 
                                         {/* Expand Button with Custom Image Background */}
                                         <div className="relative w-12 h-12 rounded-full overflow-hidden flex items-center justify-center shadow-md">
-                                            {/* Background Image */}
-                                            <img
+                                            <Image
                                                 src="/button-bg.png"
                                                 alt=""
+                                                fill
                                                 className="absolute inset-0 w-full h-full object-cover"
                                             />
-                                            {/* Dark Overlay */}
                                             <div className="absolute inset-0 bg-black/40" />
-                                            {/* Plus Icon */}
                                             <div className={`relative z-10 transition-transform duration-300 ${isActive ? 'rotate-45' : 'rotate-0'}`}>
                                                 <Plus className="w-6 h-6 text-white" strokeWidth={2} />
                                             </div>
@@ -114,7 +112,6 @@ const ServicesSection = () => {
                                             {/* Text Column */}
                                             <div className="lg:col-span-5 flex flex-col justify-between h-full">
                                                 <div>
-                                                    {/* Number Repeater */}
                                                     <div className="text-sm font-bold mb-4 block lg:hidden text-[#0B1B32]">{Item.id}.</div>
                                                     <p className="text-lg text-[#0B1B32]/80 leading-relaxed max-w-md">
                                                         {Item.description}
@@ -157,9 +154,10 @@ const ServicesSection = () => {
                                             {/* Image Column */}
                                             <div className="lg:col-span-7">
                                                 <div className="relative w-full h-64 md:h-80 rounded-2xl overflow-hidden bg-neutral-100">
-                                                    <img
+                                                    <Image
                                                         src={Item.image}
                                                         alt={Item.title}
+                                                        fill
                                                         className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                                                     />
                                                 </div>
@@ -175,15 +173,13 @@ const ServicesSection = () => {
                     {/* Learn More Button */}
                     <div className="flex justify-center">
                         <Link href="/services" className="relative px-8 py-3 rounded-full overflow-hidden group shadow-lg">
-                            {/* Background Image */}
-                            <img
+                            <Image
                                 src="/button-bg.png"
                                 alt=""
+                                fill
                                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                             />
-                            {/* Dark Overlay */}
                             <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-300" />
-
                             <span className="relative z-10 text-white font-bold text-base tracking-wide uppercase">
                                 Learn more about services
                             </span>

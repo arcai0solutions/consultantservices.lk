@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Facebook, Linkedin, Instagram } from 'lucide-react';
 
 const Footer = () => {
@@ -86,9 +87,11 @@ const Footer = () => {
                     {/* Col 3 */}
                     <div className="flex flex-col gap-6 items-start">
                         <Link href="/" className="inline-block">
-                            <img
+                            <Image
                                 src="/logo.jpg"
                                 alt="Logo"
+                                width={100}
+                                height={100}
                                 className="h-12 w-auto object-contain rounded-md"
                             />
                         </Link>
@@ -115,7 +118,7 @@ const Footer = () => {
                     <div className="flex items-center gap-1">
                         <span>Designed by</span>
                         <a href="https://www.arcai.agency" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
-                            <img src="/arc logo.png" alt="ARC AI" className="h-12 w-auto align-middle -mt-1 -mb-2" />
+                            <Image src="/arc logo.png" alt="ARC AI" width={60} height={48} className="h-12 w-auto align-middle -mt-1 -mb-2" />
                         </a>
                     </div>
                     <div className="flex items-center gap-1">

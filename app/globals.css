@@ -2,13 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: 'StackSansNotch';
-  src: url('/StackSansNotch-VariableFont_wght.ttf') format('truetype');
-  font-weight: 100 900;
-  font-display: swap;
-}
-
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;

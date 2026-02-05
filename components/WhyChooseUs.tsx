@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const WhyChooseUs = () => {
     const cards = [
@@ -50,9 +51,10 @@ const WhyChooseUs = () => {
                             {/* Top Section: Image */}
                             <div className="h-64 flex items-center justify-center p-8 border-b border-neutral-200">
                                 <div className="relative w-32 h-32 md:w-40 md:h-40">
-                                    <img
+                                    <Image
                                         src={card.image}
                                         alt={card.alt}
+                                        fill
                                         className={`w-full h-full object-contain transition-transform duration-500 group-hover:scale-110 ${card.iconClass}`}
                                         loading="lazy"
                                     />
@@ -78,10 +80,10 @@ const WhyChooseUs = () => {
                 {/* Learn More Button */}
                 <div className="flex justify-center mt-12">
                     <Link href="/about" className="relative px-8 py-3 rounded-full overflow-hidden group shadow-lg">
-                        {/* Background Image */}
-                        <img
+                        <Image
                             src="/button-bg.png"
                             alt=""
+                            fill
                             className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                         />
                         {/* Dark Overlay */}

@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 
 const industries = [
     "Manufacturing",
@@ -75,7 +76,7 @@ const Card = ({ name }: { name: string }) => (
         style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' }}
     >
         {/* Background */}
-        <img src="/card-bg.jpeg" alt="" className="absolute inset-0 w-full h-full object-cover" />
+        <Image src="/card-bg.jpeg" alt="" fill className="absolute inset-0 w-full h-full object-cover" />
         {/* Blur and Overlay */}
         {/* Use backdrop-blur-md for a noticeable blur on the image behind */}
         <div className="absolute inset-0 bg-black/60 md:bg-black/40 md:backdrop-blur-sm" />

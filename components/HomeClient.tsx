@@ -2,6 +2,7 @@
 
 import { useState, useRef, useCallback, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import StaggeredMenu from '@/components/StaggeredMenu';
 import Preloader from '@/components/Preloader';
 import { Button } from '@/components/ui/button';
@@ -17,8 +18,15 @@ export default function HomeClient({ children }: HomeClientProps) {
     const videoRef = useRef<HTMLVideoElement>(null);
 
     useEffect(() => {
+        let ticking = false;
         const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50);
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    setIsScrolled(window.scrollY > 50);
+                    ticking = false;
+                });
+                ticking = true;
+            }
         };
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
@@ -44,10 +52,11 @@ export default function HomeClient({ children }: HomeClientProps) {
     const logoContent = (
         <div className={`relative rounded-full overflow-hidden border-2 border-white/20 transition-all duration-500 ease-in-out ${isScrolled ? 'w-20 h-20' : 'w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24'
             }`}>
-            <img
+            <Image
                 src="/logo.jpg"
                 alt="Logo"
-                className={`w-full h-full object-cover transition-transform duration-500 ease-in-out ${isScrolled ? 'scale-100' : 'scale-150'
+                fill
+                className={`object-cover transition-transform duration-500 ease-in-out ${isScrolled ? 'scale-100' : 'scale-150'
                     }`}
             />
         </div>
@@ -78,7 +87,7 @@ export default function HomeClient({ children }: HomeClientProps) {
                         <div className="relative z-10 flex flex-col items-start justify-center md:justify-end h-full px-8 md:px-12 lg:px-16 md:pb-32 lg:pb-40 text-left">
                             <h1
                                 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-4 max-w-4xl"
-                                style={{ fontFamily: 'StackSansNotch, sans-serif' }}
+                                style={{ fontFamily: 'var(--font-stack-sans), sans-serif' }}
                             >
                                 Your Corporate Compliance Partner
                             </h1>

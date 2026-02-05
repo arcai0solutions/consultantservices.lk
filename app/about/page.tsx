@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Shield, FileCheck, Users, Clock } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
     title: 'About Us | Secretaries Consultant Services',
@@ -81,7 +82,7 @@ export default function AboutPage() {
                         <div className="relative p-8 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden group border border-white/10">
                              {/* Background Image & Overlay */}
                              <div className="absolute inset-0 z-0">
-                                <img src="/card-bg.jpeg" alt="" className="w-full h-full object-cover opacity-60" />
+                                <Image src="/card-bg.jpeg" alt="" fill className="w-full h-full object-cover opacity-60" />
                                 <div className="absolute inset-0 bg-[#0B1B32]/90 mix-blend-multiply"></div>
                             </div>
 
@@ -98,7 +99,7 @@ export default function AboutPage() {
                          <div className="relative p-8 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden group border border-white/10">
                              {/* Background Image & Overlay */}
                              <div className="absolute inset-0 z-0">
-                                <img src="/card-bg.jpeg" alt="" className="w-full h-full object-cover opacity-60" />
+                                <Image src="/card-bg.jpeg" alt="" fill className="w-full h-full object-cover opacity-60" />
                                 <div className="absolute inset-0 bg-[#0B1B32]/90 mix-blend-multiply"></div>
                             </div>
 
@@ -115,7 +116,7 @@ export default function AboutPage() {
                          <div className="relative p-8 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden group border border-white/10">
                              {/* Background Image & Overlay */}
                              <div className="absolute inset-0 z-0">
-                                <img src="/card-bg.jpeg" alt="" className="w-full h-full object-cover opacity-60" />
+                                <Image src="/card-bg.jpeg" alt="" fill className="w-full h-full object-cover opacity-60" />
                                 <div className="absolute inset-0 bg-[#0B1B32]/90 mix-blend-multiply"></div>
                             </div>
 
@@ -132,7 +133,7 @@ export default function AboutPage() {
                          <div className="relative p-8 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden group border border-white/10">
                              {/* Background Image & Overlay */}
                              <div className="absolute inset-0 z-0">
-                                <img src="/card-bg.jpeg" alt="" className="w-full h-full object-cover opacity-60" />
+                                <Image src="/card-bg.jpeg" alt="" fill className="w-full h-full object-cover opacity-60" />
                                 <div className="absolute inset-0 bg-[#0B1B32]/90 mix-blend-multiply"></div>
                             </div>
 
@@ -156,7 +157,7 @@ export default function AboutPage() {
                         <div className="relative flex flex-col p-8 md:p-10 rounded-2xl overflow-hidden group shadow-xl">
                              {/* Background Image & Overlay */}
                              <div className="absolute inset-0 z-0">
-                                <img src="/card-bg.jpeg" alt="" className="w-full h-full object-cover opacity-60" />
+                                <Image src="/card-bg.jpeg" alt="" fill className="w-full h-full object-cover opacity-60" />
                                 <div className="absolute inset-0 bg-[#0B1B32]/90 mix-blend-multiply"></div>
                             </div>
 

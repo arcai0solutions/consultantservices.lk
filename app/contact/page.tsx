@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import PageHeader from '@/components/PageHeader';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Phone, Mail, MessageCircle, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -66,7 +67,7 @@ export default function ContactPage() {
                                 <div className="flex items-center gap-5 p-4 bg-[#0B1B32] rounded-xl border border-white/10 shadow-[0_4px_20px_-2px_rgba(0,0,0,0.3)] hover:shadow-[0_8px_30px_-4px_rgba(11,27,50,0.5)] transition-all duration-300 transform hover:-translate-y-1 group relative overflow-hidden">
                                      {/* Background Image & Overlay */}
                                     <div className="absolute inset-0 z-0">
-                                        <img src="/card-bg.jpeg" alt="" className="w-full h-full object-cover opacity-60" />
+                                        <Image src="/card-bg.jpeg" alt="" fill className="w-full h-full object-cover opacity-60" />
                                         <div className="absolute inset-0 bg-[#0B1B32]/80 mix-blend-multiply"></div>
                                     </div>
                                     
@@ -85,7 +86,7 @@ export default function ContactPage() {
                                 <div className="flex items-center gap-5 p-4 bg-[#0B1B32] rounded-xl border border-white/10 shadow-[0_4px_20px_-2px_rgba(0,0,0,0.3)] hover:shadow-[0_8px_30px_-4px_rgba(11,27,50,0.5)] transition-all duration-300 transform hover:-translate-y-1 group relative overflow-hidden">
                                      {/* Background Image & Overlay */}
                                      <div className="absolute inset-0 z-0">
-                                        <img src="/card-bg.jpeg" alt="" className="w-full h-full object-cover opacity-60" />
+                                        <Image src="/card-bg.jpeg" alt="" fill className="w-full h-full object-cover opacity-60" />
                                         <div className="absolute inset-0 bg-[#0B1B32]/80 mix-blend-multiply"></div>
                                     </div>
 
@@ -106,7 +107,7 @@ export default function ContactPage() {
                                 <div className="flex items-center gap-5 p-4 bg-[#0B1B32] rounded-xl border border-white/10 shadow-[0_4px_20px_-2px_rgba(0,0,0,0.3)] hover:shadow-[0_8px_30px_-4px_rgba(11,27,50,0.5)] transition-all duration-300 transform hover:-translate-y-1 group relative overflow-hidden">
                                     {/* Background Image & Overlay */}
                                     <div className="absolute inset-0 z-0">
-                                        <img src="/card-bg.jpeg" alt="" className="w-full h-full object-cover opacity-60" />
+                                        <Image src="/card-bg.jpeg" alt="" fill className="w-full h-full object-cover opacity-60" />
                                         <div className="absolute inset-0 bg-[#0B1B32]/80 mix-blend-multiply"></div>
                                     </div>
 

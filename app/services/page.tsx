@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import PageHeader from '@/components/PageHeader';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 
@@ -86,7 +87,7 @@ export default function ServicesPage() {
                             >
                                 {/* Background Image & Overlay */}
                                 <div className="absolute inset-0 z-0">
-                                    <img src="/card-bg.jpeg" alt="" className="w-full h-full object-cover opacity-60 blur-[2px] scale-105" />
+                                    <Image src="/card-bg.jpeg" alt="" fill className="w-full h-full object-cover opacity-60 blur-[2px] scale-105" />
                                     <div className="absolute inset-0 bg-[#0B1B32]/90 mix-blend-multiply"></div>
                                 </div>
 
