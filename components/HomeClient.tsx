@@ -59,7 +59,7 @@ export default function HomeClient({ children }: HomeClientProps) {
             {isLoading && <Preloader onComplete={handlePreloaderComplete} />}
             {/* Main content always renders - hero loads behind preloader */}
             <main className={`min-h-screen bg-gradient-to-br from-neutral-50 to-neutral-100 p-2 ${isLoading ? 'overflow-hidden' : ''}`}>
-                <section className="mx-auto w-full h-[calc(100vh-16px)] flex flex-col mb-2">
+                <section className="relative mx-auto w-full h-[calc(100vh-16px)] flex flex-col mb-2">
                     <div className="relative overflow-hidden rounded-xl flex-1">
                         <video
                             ref={videoRef}
@@ -73,32 +73,6 @@ export default function HomeClient({ children }: HomeClientProps) {
                             className="absolute inset-0 w-full h-full object-cover"
                         />
                         <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
-
-                        {/* Staggered Menu */}
-                        <div className="absolute top-0 right-0 z-50 h-full w-full pointer-events-none">
-                            <StaggeredMenu
-                                items={[
-                                    { label: 'Home', ariaLabel: 'Home page', link: '/' },
-                                    { label: 'About Us', ariaLabel: 'About our company', link: '/about' },
-                                    { label: 'Our Services', ariaLabel: 'View our services', link: '/services' },
-                                    { label: 'FAQ', ariaLabel: 'Frequently Asked Questions', link: '/faq' },
-                                    { label: 'Reviews', ariaLabel: 'See what clients say', link: '/reviews' },
-                                    { label: 'Contact Us', ariaLabel: 'Get in touch', link: '/contact' }
-                                ]}
-                                displayItemNumbering={false}
-                                socialItems={[
-                                    { label: 'Facebook', link: 'https://www.facebook.com/people/Secretaries-Consultant-Services/100081628302029/' },
-                                    { label: 'LinkedIn', link: 'https://www.linkedin.com/company/secretaries-consultant-services' }
-                                ]}
-                                menuButtonColor="#ffffff"
-                                colors={['#0a192f', '#112240', '#0a192f']}
-                                accentColor="#0a192f"
-                                logoUrl=""
-                                openMenuButtonColor="#000000"
-                                customLogo={logoContent}
-                                isScrolled={isScrolled}
-                            />
-                        </div>
 
                         {/* Hero Content */}
                         <div className="relative z-10 flex flex-col items-start justify-center md:justify-end h-full px-8 md:px-12 lg:px-16 md:pb-32 lg:pb-40 text-left">
@@ -124,6 +98,32 @@ export default function HomeClient({ children }: HomeClientProps) {
                                 </Button>
                             </div>
                         </div>
+                    </div>
+
+                    {/* Staggered Menu */}
+                    <div className="absolute top-0 right-0 z-50 h-full w-full pointer-events-none">
+                        <StaggeredMenu
+                            items={[
+                                { label: 'Home', ariaLabel: 'Home page', link: '/' },
+                                { label: 'About Us', ariaLabel: 'About our company', link: '/about' },
+                                { label: 'Our Services', ariaLabel: 'View our services', link: '/services' },
+                                { label: 'FAQ', ariaLabel: 'Frequently Asked Questions', link: '/faq' },
+                                { label: 'Reviews', ariaLabel: 'See what clients say', link: '/reviews' },
+                                { label: 'Contact Us', ariaLabel: 'Get in touch', link: '/contact' }
+                            ]}
+                            displayItemNumbering={false}
+                            socialItems={[
+                                { label: 'Facebook', link: 'https://www.facebook.com/people/Secretaries-Consultant-Services/100081628302029/' },
+                                { label: 'LinkedIn', link: 'https://www.linkedin.com/company/secretaries-consultant-services' }
+                            ]}
+                            menuButtonColor="#ffffff"
+                            colors={['#0a192f', '#112240', '#0a192f']}
+                            accentColor="#0a192f"
+                            logoUrl=""
+                            openMenuButtonColor="#000000"
+                            customLogo={logoContent}
+                            isScrolled={isScrolled}
+                        />
                     </div>
                 </section>
 
