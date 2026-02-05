@@ -76,12 +76,15 @@ const IndustriesSection = () => {
 }
 
 const Card = ({ name }: { name: string }) => (
-    <div className="relative w-48 h-24 md:w-64 md:h-32 rounded-xl overflow-hidden shrink-0 group hover:scale-105 transition-transform duration-300 shadow-lg">
+    <div 
+        className="relative w-48 h-24 md:w-64 md:h-32 rounded-xl overflow-hidden shrink-0 group hover:scale-105 transition-transform duration-300 shadow-lg transform-gpu"
+        style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' }}
+    >
         {/* Background */}
         <img src="/card-bg.jpeg" alt="" className="absolute inset-0 w-full h-full object-cover" />
         {/* Blur and Overlay */}
         {/* Use backdrop-blur-md for a noticeable blur on the image behind */}
-        <div className="absolute inset-0 backdrop-blur-sm bg-black/40" />
+        <div className="absolute inset-0 bg-black/60 md:bg-black/40 md:backdrop-blur-sm" />
 
         {/* Text */}
         <div className="relative z-10 w-full h-full flex items-center justify-center p-6 text-center">
