@@ -1,9 +1,15 @@
 import React from 'react';
+import type { Metadata } from 'next';
 import StaggeredMenu from '@/components/StaggeredMenu';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Shield, FileCheck, Users, Clock } from 'lucide-react';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+    title: 'About Us | Secretaries Consultant Services',
+    description: 'Learn about Secretaries Consultant Services, your trusted partner for corporate compliance, company registration, and business support in Sri Lanka and beyond.',
+};
 
 export default function AboutPage() {
     return (

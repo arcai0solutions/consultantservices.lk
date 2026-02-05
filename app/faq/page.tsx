@@ -1,9 +1,15 @@
 import React from 'react';
+import type { Metadata } from 'next';
 import StaggeredMenu from '@/components/StaggeredMenu';
 import Footer from '@/components/Footer';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import Link from 'next/link';
 import { MessageCircle } from 'lucide-react';
+
+export const metadata: Metadata = {
+    title: 'FAQ | Secretaries Consultant Services',
+    description: 'Find answers to frequently asked questions about company registration, business compliance, and corporate services in Sri Lanka.',
+};
 
 export default function FAQPage() {
     const mfaqs = [

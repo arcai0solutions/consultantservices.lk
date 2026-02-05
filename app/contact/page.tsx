@@ -1,4 +1,5 @@
 import React from 'react';
+import type { Metadata } from 'next';
 import StaggeredMenu from '@/components/StaggeredMenu';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
@@ -14,6 +15,11 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
+
+export const metadata: Metadata = {
+    title: 'Contact Us | Secretaries Consultant Services',
+    description: 'Get in touch with Secretaries Consultant Services for expert guidance on company registration, compliance, and business support. Call, email, or visit us.',
+};
 
 export default function ContactPage() {
     return (

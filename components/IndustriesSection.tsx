@@ -20,13 +20,7 @@ const IndustriesSection = () => {
             <div className="container mx-auto px-4 md:px-6 mb-16">
                 {/* Header */}
                 <div className="flex flex-col items-center md:items-start relative">
-                    {/* Tag */}
-                    <div
-                        className="absolute -top-10 left-0 md:-left-4 text-sm font-medium tracking-wide uppercase px-3 py-1 bg-[#0B1B32] text-white border border-[#0B1B32]/10 shadow-sm"
-                        style={{ transform: 'rotate(-15deg)' }}
-                    >
-                        Industries we serve
-                    </div>
+
                     <div className="mt-8 flex flex-col items-center md:items-start text-center md:text-left">
                         <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight text-[#0B1B32] mb-6">
                             Industries we support

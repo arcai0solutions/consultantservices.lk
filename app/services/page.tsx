@@ -1,9 +1,15 @@
 import React from 'react';
+import type { Metadata } from 'next';
 import StaggeredMenu from '@/components/StaggeredMenu';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
+
+export const metadata: Metadata = {
+    title: 'Our Services | Secretaries Consultant Services',
+    description: 'Explore our comprehensive services including company registration, corporate secretarial services, tax advisory, BOI registration, and trademark protection.',
+};
 
 export default function ServicesPage() {
     const services = [

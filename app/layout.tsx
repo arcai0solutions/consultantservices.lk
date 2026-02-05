@@ -5,8 +5,12 @@ import { Inter } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://consultantservices.lk'),
   title: 'Secretaries Consultant Services | Your Corporate Compliance Partner',
-  description: 'From company registration to ongoing statutory compliance, we handle the regulatory work with accuracy, confidentiality, and speed. Corporate secretarial services, business registration, tax advisory, BOI registration, customs registration, trademark registration, and BPO services in Sri Lanka, Maldives, Mauritius, Seychelles, and the Middle East.',
+  description: 'From company registration to ongoing statutory compliance, we handle the regulatory work with accuracy, confidentiality, and speed. Global corporate services.',
+  applicationName: 'Secretaries Consultant Services',
+  authors: [{ name: 'Secretaries Consultant Services', url: 'https://consultantservices.lk' }],
+  generator: 'Next.js',
   keywords: [
     'corporate secretarial services',
     'business registration',
@@ -27,9 +31,10 @@ export const metadata: Metadata = {
     'statutory compliance',
     'company formation'
   ],
-  authors: [{ name: 'Secretaries Consultant Services' }],
-  creator: 'ARC AI',
   publisher: 'Secretaries Consultant Services',
+  alternates: {
+    canonical: '/',
+  },
   icons: {
     icon: '/logo.jpg',
     shortcut: '/logo.jpg',
@@ -45,9 +50,9 @@ export const metadata: Metadata = {
     images: [
       {
         url: '/logo.jpg',
-        width: 800,
-        height: 600,
-        alt: 'Secretaries Consultant Services',
+        width: 1200,
+        height: 630,
+        alt: 'Secretaries Consultant Services Logo',
       },
     ],
   },
@@ -56,6 +61,7 @@ export const metadata: Metadata = {
     title: 'Secretaries Consultant Services | Your Corporate Compliance Partner',
     description: 'From company registration to ongoing statutory compliance, we handle the regulatory work with accuracy, confidentiality, and speed.',
     images: ['/logo.jpg'],
+    creator: '@SecretariesConsultantServices',
   },
   robots: {
     index: true,

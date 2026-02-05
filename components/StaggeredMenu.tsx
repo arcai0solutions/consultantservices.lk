@@ -29,6 +29,8 @@ export interface StaggeredMenuProps {
     closeOnClickAway?: boolean;
     onMenuOpen?: () => void;
     onMenuClose?: () => void;
+    customLogo?: React.ReactNode;
+    isScrolled?: boolean;
 }
 
 const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
@@ -47,7 +49,9 @@ const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
     isFixed = false,
     closeOnClickAway = true,
     onMenuOpen,
-    onMenuClose
+    onMenuClose,
+    customLogo,
+    isScrolled = false
 }: StaggeredMenuProps) => {
     const [open, setOpen] = useState(false);
     const openRef = useRef(false);
@@ -415,17 +419,33 @@ const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                 </div>
 
                 <header
-                    className="staggered-menu-header absolute top-0 left-0 w-full flex items-center justify-between p-[2em] bg-transparent pointer-events-none z-20"
+                    className={isScrolled
+                        ? "fixed top-4 left-1/2 -translate-x-1/2 w-[90%] max-w-7xl bg-white rounded-2xl shadow-lg border border-white/20 flex items-center justify-between px-6 py-1 z-50"
+                        : "staggered-menu-header"
+                    }
                     aria-label="Main navigation header"
                 >
-                    {/* Logo is handled externally, so this slot can be empty or removed if we don't want the menu to manage the logo */}
-                    <div className="sm-logo flex items-center select-none pointer-events-auto opacity-0 pointer-events-none" aria-label="Logo">
-                        {/* Logo hidden here as we are doing custom logo placement on page */}
+                    {/* Logo */}
+                    {(customLogo || logoUrl) && (
+                    <div
+                        className={isScrolled
+                            ? "flex items-center select-none pointer-events-auto"
+                            : "absolute top-6 left-8 md:top-8 md:left-12 lg:top-10 lg:left-16 flex items-center select-none pointer-events-auto"
+                        }
+                        aria-label="Logo"
+                    >
+                        {customLogo || (
+                            <img src={logoUrl} alt="Logo" className="h-8 w-auto object-contain" />
+                        )}
                     </div>
+                    )}
 
                     <button
                         ref={toggleBtnRef}
-                        className={`sm-toggle relative inline-flex items-center gap-[0.3rem] bg-transparent border-0 cursor-pointer font-medium leading-none overflow-visible pointer-events-auto ${open ? 'text-black' : 'text-[#e9e9ef]'
+                        style={isScrolled ? { right: 0, top: 0, color: '#000000' } : {}}
+                        className={`sm-toggle relative inline-flex items-center gap-[0.3rem] bg-transparent border-0 cursor-pointer font-medium leading-none overflow-visible pointer-events-auto ${isScrolled
+                            ? 'text-black'
+                            : `text-[#e9e9ef] ${open ? '!text-black' : ''} ml-auto`
                             }`}
                         aria-label={open ? 'Close menu' : 'Open menu'}
                         aria-expanded={open}

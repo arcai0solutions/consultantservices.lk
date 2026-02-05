@@ -1,9 +1,15 @@
 import React from 'react';
+import type { Metadata } from 'next';
 import StaggeredMenu from '@/components/StaggeredMenu';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
 import { Quote } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+
+export const metadata: Metadata = {
+    title: 'Client Reviews | Secretaries Consultant Services',
+    description: 'See what our clients say about our corporate secretarial and business registration services. Trusted by companies for reliable compliance support.',
+};
 
 export default function ReviewsPage() {
     const reviews = [

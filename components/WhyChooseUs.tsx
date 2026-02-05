@@ -35,11 +35,9 @@ const WhyChooseUs = () => {
 
                 {/* Section Header */}
                 <div className="flex flex-col items-center justify-center text-center mb-16 lg:mb-20">
-                    <div
-                        className="inline-block bg-[#0B1B32] text-white text-lg md:text-2xl font-bold px-10 py-3 rounded-full shadow-2xl shadow-black/20"
-                    >
-                        Why Us
-                    </div>
+                    <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight text-[#0B1B32]">
+                        Why choose us
+                    </h2>
                 </div>
 
                 {/* Grid Container with Borders */}
