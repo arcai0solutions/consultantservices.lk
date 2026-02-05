@@ -1,10 +1,8 @@
 'use client';
 
 import { useState, useRef, useCallback } from 'react';
-import Link from 'next/link';
 import StaggeredMenu from '@/components/StaggeredMenu';
 import Preloader from '@/components/Preloader';
-import { Button } from '@/components/ui/button';
 
 interface HomeClientProps {
     children: React.ReactNode;
@@ -88,7 +86,7 @@ export default function HomeClient({ children }: HomeClientProps) {
                         </div>
 
                         {/* Hero Content */}
-                        <div className="relative z-10 flex flex-col items-start justify-end h-full px-8 md:px-12 lg:px-16 pb-64 md:pb-32 lg:pb-40 text-left">
+                        <div className="relative z-10 flex flex-col items-start justify-end h-full px-8 md:px-12 lg:px-16 pb-24 md:pb-32 lg:pb-40 text-left">
                             <h1
                                 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-4 max-w-4xl"
                                 style={{ fontFamily: 'StackSansNotch, sans-serif' }}
@@ -98,13 +96,6 @@ export default function HomeClient({ children }: HomeClientProps) {
                             <p className="text-lg md:text-xl text-white/90 max-w-2xl leading-relaxed">
                                 From company registration to ongoing statutory compliance, we handle the regulatory work with accuracy, confidentiality, and speed so you can focus on growth.
                             </p>
-                            <div className="mt-8">
-                                <Button asChild size="lg" className="bg-white text-black hover:bg-neutral-200 border-none rounded-full px-8 text-base font-medium">
-                                    <Link href="/services">
-                                        Learn More
-                                    </Link>
-                                </Button>
-                            </div>
                         </div>
                     </div>
                 </section>
