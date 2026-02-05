@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import StaggeredMenu from '@/components/StaggeredMenu';
+import PageHeader from '@/components/PageHeader';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -55,43 +55,9 @@ export default function ServicesPage() {
             {/* Top Navigation & Logo Section */}
             <div className="relative bg-[#0a192f] text-white overflow-hidden pb-16">
                  
-                {/* Navbar */}
-                <div className="absolute top-0 right-0 z-50 h-full w-full pointer-events-none">
-                    <StaggeredMenu
-                        isFixed
-                        items={[
-                            { label: 'Home', ariaLabel: 'Home page', link: '/' },
-                            { label: 'About Us', ariaLabel: 'About our company', link: '/about' },
-                            { label: 'Our Services', ariaLabel: 'View our services', link: '/services' },
-                            { label: 'FAQ', ariaLabel: 'Frequently Asked Questions', link: '/faq' },
-                            { label: 'Reviews', ariaLabel: 'See what clients say', link: '/reviews' },
-                            { label: 'Contact Us', ariaLabel: 'Get in touch', link: '/contact' }
-                        ]}
-                        displayItemNumbering={false}
-                        socialItems={[
-                            { label: 'Facebook', link: 'https://www.facebook.com/people/Secretaries-Consultant-Services/100081628302029/' },
-                            { label: 'LinkedIn', link: 'https://www.linkedin.com/company/secretaries-consultant-services' }
-                        ]}
-                        menuButtonColor="#ffffff"
-                        colors={['#0a192f', '#112240', '#0a192f']}
-                        accentColor="#0a192f"
-                        logoUrl=""
-                        openMenuButtonColor="#000000"
-                    />
-                </div>
 
-                {/* Logo */}
-                <div className="absolute top-6 left-8 md:top-8 md:left-12 lg:top-10 lg:left-16 z-20">
-                     <Link href="/">
-                        <div className="relative w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full overflow-hidden border-2 border-white/20 cursor-pointer">
-                            <img
-                                src="/logo.jpg"
-                                alt="Logo"
-                                className="w-full h-full object-cover scale-150"
-                            />
-                        </div>
-                    </Link>
-                </div>
+                <PageHeader />
+
 
                 {/* Hero Content */}
                 <div className="container mx-auto px-4 md:px-6 pt-40 md:pt-48 lg:pt-56 pb-12">

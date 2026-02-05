@@ -421,17 +421,14 @@ const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                 <header
                     className={isScrolled
                         ? "fixed top-4 left-1/2 -translate-x-1/2 w-[90%] max-w-7xl bg-white rounded-2xl shadow-lg border border-white/20 flex items-center justify-between px-6 py-1 z-50"
-                        : "staggered-menu-header"
+                        : "absolute top-0 left-0 w-full flex items-center justify-between z-50 pointer-events-none pt-6 px-8 md:pt-8 md:px-12 lg:pt-10 lg:px-16"
                     }
                     aria-label="Main navigation header"
                 >
                     {/* Logo */}
                     {(customLogo || logoUrl) && (
                     <div
-                        className={isScrolled
-                            ? "flex items-center select-none pointer-events-auto"
-                            : "absolute top-6 left-8 md:top-8 md:left-12 lg:top-10 lg:left-16 flex items-center select-none pointer-events-auto"
-                        }
+                        className="flex items-center select-none pointer-events-auto"
                         aria-label="Logo"
                     >
                         {customLogo || (
@@ -445,7 +442,7 @@ const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                         style={isScrolled ? { right: 0, top: 0, color: '#000000' } : {}}
                         className={`sm-toggle relative inline-flex items-center gap-[0.3rem] bg-transparent border-0 cursor-pointer font-medium leading-none overflow-visible pointer-events-auto ${isScrolled
                             ? 'text-black'
-                            : `text-[#e9e9ef] ${open ? '!text-black' : ''} ml-auto`
+                            : `text-[#e9e9ef] ${open ? '!text-black' : ''} ml-auto -translate-y-1`
                             }`}
                         aria-label={open ? 'Close menu' : 'Open menu'}
                         aria-expanded={open}
