@@ -49,11 +49,11 @@ export const metadata: Metadata = {
     description: 'From company registration to ongoing statutory compliance, we handle the regulatory work with accuracy, confidentiality, and speed.',
     images: [
       {
-        url: 'https://consultantservices.lk/shareable-logo.jpg',
+        url: 'https://consultantservices.lk/share-img.png',
         width: 1200,
         height: 630,
         alt: 'Secretaries Consultant Services - Your Corporate Compliance Partner',
-        type: 'image/jpeg',
+        type: 'image/png',
       },
     ],
   },
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     description: 'From company registration to ongoing statutory compliance, we handle the regulatory work with accuracy, confidentiality, and speed.',
     images: [
       {
-        url: 'https://consultantservices.lk/shareable-logo.jpg',
+        url: 'https://consultantservices.lk/share-img.png',
         alt: 'Secretaries Consultant Services - Your Corporate Compliance Partner',
       },
     ],
