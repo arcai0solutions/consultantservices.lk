@@ -116,7 +116,7 @@ export default function HomeClient({ children }: HomeClientProps) {
                                 { label: 'Facebook', link: 'https://www.facebook.com/people/Secretaries-Consultant-Services/100081628302029/' },
                                 { label: 'LinkedIn', link: 'https://www.linkedin.com/company/secretaries-consultant-services' }
                             ]}
-                            menuButtonColor="#ffffff"
+                            menuButtonColor={isScrolled ? "#000000" : "#ffffff"}
                             colors={['#0a192f', '#112240', '#0a192f']}
                             accentColor="#0a192f"
                             logoUrl=""

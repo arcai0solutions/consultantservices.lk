@@ -330,9 +330,18 @@ const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
         textCycleAnimRef.current = gsap.to(inner, {
             yPercent: -finalShift,
             duration: 0.5 + lineCount * 0.07,
-            ease: 'power4.out'
+            ease: 'power4.out',
+            onComplete: () => {
+                setTextLines([targetLabel]);
+            }
         });
     }, []);
+
+    useLayoutEffect(() => {
+        if (textLines.length === 1 && textInnerRef.current) {
+            gsap.set(textInnerRef.current, { yPercent: 0 });
+        }
+    }, [textLines]);
 
     const toggleMenu = useCallback(() => {
         const target = !openRef.current;
@@ -386,7 +395,7 @@ const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
 
     return (
         <div
-            className={`sm-scope z-40 ${isFixed ? 'fixed top-0 left-0 w-screen h-screen overflow-hidden' : 'w-full h-full'}`}
+            className={`sm-scope z-40 ${isFixed || open ? 'fixed top-0 left-0 w-screen h-screen overflow-hidden pointer-events-auto' : 'w-full h-full'}`}
         >
             <div
                 className={
