@@ -42,7 +42,7 @@ export default function ContactPage() {
                             Contact us
                         </h1>
                         <p className="text-lg md:text-xl text-white/80 max-w-2xl leading-relaxed mt-6">
-                            Tell us what you need and we will respond with next steps and a clear checklist.
+                            Share your requirements with us, and we will respond with clear next steps and a structured checklist to guide you forward.
                         </p>
                      </div>
                 </div>
@@ -56,7 +56,6 @@ export default function ContactPage() {
                         {/* Left Column: Quick Contact Info */}
                         <div className="flex flex-col gap-8">
                             <div>
-                                <h3 className="text-2xl font-bold text-[#0B1B32] mb-6" style={{ fontFamily: 'StackSansNotch, sans-serif' }}>Get in touch</h3>
                                 <p className="text-neutral-600 mb-8 leading-relaxed">
                                     Whether you're starting a new business or need support with ongoing compliance, our team is here to help.
                                 </p>
@@ -126,8 +125,6 @@ export default function ContactPage() {
 
                         {/* Right Column: Contact Form */}
                         <div className="bg-neutral-50 p-8 md:p-10 rounded-3xl border border-neutral-200 shadow-sm">
-                            <h3 className="text-2xl font-bold text-[#0B1B32] mb-6" style={{ fontFamily: 'StackSansNotch, sans-serif' }}>Send us a message</h3>
-                            
                             <form className="space-y-6">
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div className="space-y-2">

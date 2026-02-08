@@ -92,7 +92,7 @@ export default function HomeClient({ children }: HomeClientProps) {
                                 Your Corporate Compliance Partner
                             </h1>
                             <p className="text-lg md:text-xl text-white/90 max-w-2xl leading-relaxed text-left">
-                                From company registration to ongoing statutory compliance, we handle the regulatory work with accuracy, confidentiality, and speed so you can focus on growth.
+                                From company registration to ongoing statutory compliance, we handle all regulatory work with accuracy, confidentiality, and speed, so you can focus on growth.
                             </p>
                             <div className="flex flex-row gap-4 mt-12">
                                 <Button asChild size="lg" className="bg-white text-black hover:bg-white/90 font-semibold text-lg px-8">

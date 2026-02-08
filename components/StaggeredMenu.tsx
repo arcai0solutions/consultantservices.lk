@@ -449,11 +449,11 @@ const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
 
                     <button
                         ref={toggleBtnRef}
-                        style={isScrolled ? { right: 0, top: 0, color: '#000000' } : {}}
-                        className={`sm-toggle relative inline-flex items-center gap-[0.3rem] bg-transparent border-0 cursor-pointer font-medium leading-none overflow-visible pointer-events-auto ${isScrolled
-                            ? 'text-black'
-                            : `text-[#e9e9ef] ${open ? '!text-black' : ''} ml-auto -translate-y-1`
-                            }`}
+                        style={isScrolled ? { right: 0, top: 0 } : {}}
+                        className={`sm-toggle relative inline-flex items-center gap-[0.3rem] border-0 cursor-pointer font-medium leading-none overflow-visible pointer-events-auto ${open
+                            ? 'bg-transparent !text-black'
+                            : '!bg-[#0a192f] !text-white px-6 py-2.5 rounded-full shadow-lg hover:!bg-[#112240] transition-colors duration-300'
+                            } ml-auto ${!isScrolled ? '-translate-y-1' : ''}`}
                         aria-label={open ? 'Close menu' : 'Open menu'}
                         aria-expanded={open}
                         aria-controls="staggered-menu-panel"

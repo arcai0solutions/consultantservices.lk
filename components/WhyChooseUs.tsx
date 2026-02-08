@@ -34,12 +34,7 @@ const WhyChooseUs = () => {
         <section className="w-full bg-neutral-100 py-12 lg:py-24">
             <div className="container mx-auto px-4 md:px-6">
 
-                {/* Section Header */}
-                <div className="flex flex-col items-center justify-center text-center mb-16 lg:mb-20">
-                    <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight text-[#0B1B32]">
-                        Why choose us
-                    </h2>
-                </div>
+
 
                 {/* Grid Container with Borders */}
                 <div className="grid grid-cols-1 md:grid-cols-3 border-t border-b border-l border-r border-neutral-200 divide-y md:divide-y-0 md:divide-x divide-neutral-200 bg-neutral-100">

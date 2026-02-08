@@ -64,9 +64,8 @@ const ServicesSection = () => {
                         {/* Main Heading */}
                         <div className="mt-8 flex flex-col items-center md:items-start">
                             <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight text-[#0B1B32]">
-                                <span className="block" style={{ opacity: 1, transform: 'translate3d(0,0,0)' }}>Tailored solutions</span>
-                                <span className="block text-[#0B1B32]/60" style={{ opacity: 1, transform: 'translate3d(0,0,0)' }}>for your business</span>
-                                <span className="block" style={{ opacity: 1, transform: 'translate3d(0,0,0)' }}>success</span>
+                                <span className="block" style={{ opacity: 1, transform: 'translate3d(0,0,0)' }}>Tailored Solutions</span>
+                                <span className="block text-[#0B1B32]/60" style={{ opacity: 1, transform: 'translate3d(0,0,0)' }}>for your Business Success</span>
                             </h2>
                         </div>
                     </div>

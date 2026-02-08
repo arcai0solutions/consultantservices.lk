@@ -74,7 +74,7 @@ export default function FAQPage() {
                             Frequently asked questions
                         </h1>
                         <p className="text-lg md:text-xl text-white/80 max-w-2xl leading-relaxed mt-6">
-                            Quick answers to common questions about company registration and compliance.
+                            Clear, concise answers to the most commonly asked questions on company registration and ongoing compliance to help you move forward with confidence.
                         </p>
                      </div>
                 </div>

@@ -44,17 +44,6 @@ export default function AboutPage() {
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="max-w-5xl mx-auto">
                         <div className="flex flex-col items-start relative">
-                            {/* Rotated Tag */}
-                            <div className="mb-8 -ml-2">
-                                <div
-                                    className="inline-block bg-[#0B1B32] text-white text-sm md:text-base font-medium px-6 py-2 rounded-full shadow-2xl shadow-black/20 origin-bottom-left"
-                                    style={{
-                                        transform: 'rotate(-5deg)',
-                                    }}
-                                >
-                                    Who we are
-                                </div>
-                            </div>
                             
                             <div className="mt-4">
                                 <p className="text-xl md:text-2xl leading-relaxed text-gray-700 text-justify">
@@ -69,13 +58,6 @@ export default function AboutPage() {
             {/* What Makes You Different - Style matching WhyChooseUs */}
             <section className="w-full bg-neutral-100 py-20 lg:py-28">
                 <div className="container mx-auto px-4 md:px-6">
-                     <div className="flex flex-col items-center justify-center text-center mb-16 px-4">
-                        <div
-                            className="inline-block bg-[#0B1B32] text-white text-lg md:text-2xl font-bold px-10 py-3 rounded-full shadow-xl shadow-black/10"
-                        >
-                            What you can expect from us
-                        </div>
-                    </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
                          {/* Card 1 */}
