@@ -52,7 +52,6 @@ export default function PageHeader() {
                 openMenuButtonColor="#000000"
                 customLogo={logoContent}
                 isScrolled={isScrolled}
-                isFixed
             />
         </div>
     );

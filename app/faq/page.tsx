@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import PageHeader from '@/components/PageHeader';
 import Footer from '@/components/Footer';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import FaqAccordion from '@/components/FaqAccordion';
 import Link from 'next/link';
 import { MessageCircle } from 'lucide-react';
 
@@ -12,49 +12,6 @@ export const metadata: Metadata = {
 };
 
 export default function FAQPage() {
-    const mfaqs = [
-        {
-            questions: "Why should I register a Private Limited Company?",
-            answer: "A Private Limited Company provides limited liability, stronger credibility, and a clear legal structure for working with clients, banks, and partners."
-        },
-        {
-            questions: "What documents are required?",
-            answer: "Typically you will need identification details and a registered business address. Requirements can vary based on ownership and industry."
-        },
-        {
-            questions: "What is the company registration process?",
-            answer: "Common steps include name reservation, preparing incorporation documents, signing required forms, submitting to Registrar of Companies, receiving the certificate of incorporation, and completing initial banking and tax registrations."
-        },
-        {
-            questions: "Can someone else use my business name after I register it?",
-            answer: "Once approved and registered, your company name is protected and cannot be used by another entity in the same manner."
-        },
-        {
-            questions: "Is there a minimum capital requirement?",
-            answer: "In general, there is no minimum capital requirement, except for certain regulated industries."
-        },
-        {
-            questions: "How many directors are required?",
-            answer: "A Private Limited Company can be registered with one director."
-        },
-        {
-            questions: "Can a foreigner own a Private Limited Company?",
-            answer: "Yes, foreign ownership is possible, though some sectors may have restrictions or special requirements."
-        },
-        {
-            questions: "Can directors or shareholders be changed after registration?",
-            answer: "Yes. Changes can be made by filing the relevant forms and updates."
-        },
-        {
-            questions: "How long does registration take?",
-            answer: "After documents are signed and submitted, registration commonly takes about five working days, depending on completeness and processing."
-        },
-        {
-            questions: "What should I do after registering my company?",
-            answer: "Open a corporate bank account, complete tax registrations, maintain statutory records, file annual returns, and prepare audited financial statements where required."
-        }
-    ];
-
     return (
         <main className="min-h-screen bg-gray-50">
             {/* Top Navigation & Logo Section (Similar to About page) */}
@@ -84,22 +41,7 @@ export default function FAQPage() {
             <section className="relative w-full py-20 lg:py-28 bg-white overflow-hidden">
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="max-w-3xl mx-auto">
-                        <Accordion type="single" collapsible className="w-full space-y-4">
-                            {mfaqs.map((faq, index) => (
-                                <AccordionItem 
-                                    key={index} 
-                                    value={`item-${index}`} 
-                                    className="border border-neutral-200 rounded-lg px-6 data-[state=open]:bg-neutral-50 data-[state=open]:border-[#0B1B32]/20 transition-colors"
-                                >
-                                    <AccordionTrigger className="text-left text-lg font-medium text-[#0B1B32] py-6 hover:no-underline">
-                                        {faq.questions}
-                                    </AccordionTrigger>
-                                    <AccordionContent className="text-neutral-600 text-base pb-6 leading-relaxed">
-                                        {faq.answer}
-                                    </AccordionContent>
-                                </AccordionItem>
-                            ))}
-                        </Accordion>
+                        <FaqAccordion />
                     </div>
                 </div>
             </section>
@@ -109,7 +51,7 @@ export default function FAQPage() {
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="max-w-4xl mx-auto flex flex-col items-center text-center">
                         <h2 className="text-3xl md:text-4xl font-bold text-[#0B1B32] mb-8" style={{ fontFamily: 'StackSansNotch, sans-serif' }}>
-                            Still have a question?
+                            More Questions?
                         </h2>
                         
                         <a 
@@ -119,7 +61,7 @@ export default function FAQPage() {
                             className="inline-flex items-center gap-3 bg-[#25D366] text-white font-bold py-4 px-8 rounded-full shadow-lg hover:shadow-xl hover:bg-[#20bd5a] transition-all duration-300 transform hover:-translate-y-1"
                         >
                             <MessageCircle className="w-6 h-6" />
-                            <span className="text-lg">Message us on WhatsApp</span>
+                            <span className="text-lg">Contact Us Now</span>
                         </a>
                     </div>
                 </div>
