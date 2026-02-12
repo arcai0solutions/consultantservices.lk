@@ -52,6 +52,7 @@ export default function PageHeader() {
                 openMenuButtonColor="#000000"
                 customLogo={logoContent}
                 isScrolled={isScrolled}
+                splitNavigation={true}
             />
         </div>
     );

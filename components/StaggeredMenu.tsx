@@ -32,6 +32,7 @@ export interface StaggeredMenuProps {
     onMenuClose?: () => void;
     customLogo?: React.ReactNode;
     isScrolled?: boolean;
+    splitNavigation?: boolean;
 }
 
 const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
@@ -52,7 +53,8 @@ const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
     onMenuOpen,
     onMenuClose,
     customLogo,
-    isScrolled = false
+    isScrolled = false,
+    splitNavigation = false
 }: StaggeredMenuProps) => {
     const [open, setOpen] = useState(false);
     const openRef = useRef(false);
@@ -394,6 +396,62 @@ const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
         };
     }, [closeOnClickAway, open, closeMenu]);
 
+    const logoSection = (customLogo || logoUrl) && (
+        <div
+            className="flex items-center select-none pointer-events-auto"
+            aria-label="Logo"
+        >
+            {customLogo || (
+                <Image src={logoUrl} alt="Logo" width={32} height={32} className="h-8 w-auto object-contain" />
+            )}
+        </div>
+    );
+
+    const buttonSection = (
+        <button
+            ref={toggleBtnRef}
+            style={(!splitNavigation && isScrolled) ? { right: 0, top: 0 } : {}}
+            className={`sm-toggle relative inline-flex items-center gap-[0.3rem] border-0 cursor-pointer font-medium leading-none overflow-visible pointer-events-auto ${open
+                ? 'bg-transparent !text-black'
+                : '!bg-[#0a192f] !text-white px-6 py-2.5 rounded-full shadow-lg hover:!bg-[#112240] transition-colors duration-300'
+                } ml-auto ${(!splitNavigation && !isScrolled) ? '-translate-y-1' : ''}`}
+            aria-label={open ? 'Close menu' : 'Open menu'}
+            aria-expanded={open}
+            aria-controls="staggered-menu-panel"
+            onClick={toggleMenu}
+            type="button"
+        >
+            <span
+                ref={textWrapRef}
+                className="sm-toggle-textWrap relative inline-block h-[1em] overflow-hidden whitespace-nowrap w-[var(--sm-toggle-width,auto)] min-w-[var(--sm-toggle-width,auto)]"
+                aria-hidden="true"
+            >
+                <span ref={textInnerRef} className="sm-toggle-textInner flex flex-col leading-none">
+                    {textLines.map((l, i) => (
+                        <span className="sm-toggle-line block h-[1em] leading-none" key={i}>
+                            {l}
+                        </span>
+                    ))}
+                </span>
+            </span>
+
+            <span
+                ref={iconRef}
+                className="sm-icon relative w-[14px] h-[14px] shrink-0 inline-flex items-center justify-center [will-change:transform]"
+                aria-hidden="true"
+            >
+                <span
+                    ref={plusHRef}
+                    className="sm-icon-line absolute left-1/2 top-1/2 w-full h-[2px] bg-current rounded-[2px] -translate-x-1/2 -translate-y-1/2 [will-change:transform]"
+                />
+                <span
+                    ref={plusVRef}
+                    className="sm-icon-line sm-icon-line-v absolute left-1/2 top-1/2 w-full h-[2px] bg-current rounded-[2px] -translate-x-1/2 -translate-y-1/2 [will-change:transform]"
+                />
+            </span>
+        </button>
+    );
+
     return (
         <div
             className={`sm-scope z-40 ${isFixed || open ? 'fixed top-0 left-0 w-screen h-screen overflow-hidden pointer-events-auto' : 'w-full h-full'}`}
@@ -428,68 +486,27 @@ const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                     })()}
                 </div>
 
-                <header
-                    className={isScrolled
-                        ? "fixed top-4 left-1/2 -translate-x-1/2 w-[90%] max-w-7xl bg-white rounded-2xl shadow-lg border border-white/20 flex items-center justify-between px-6 py-1 z-50"
-                        : "absolute top-0 left-0 w-full flex items-center justify-between z-50 pointer-events-none pt-6 px-8 md:pt-8 md:px-12 lg:pt-10 lg:px-16"
-                    }
-                    aria-label="Main navigation header"
-                >
-                    {/* Logo */}
-                    {(customLogo || logoUrl) && (
-                    <div
-                        className="flex items-center select-none pointer-events-auto"
-                        aria-label="Logo"
+                {splitNavigation ? (
+                    <>
+                        <div className="absolute top-0 left-0 w-full flex items-center justify-between z-50 pointer-events-none pt-6 px-8 md:pt-8 md:px-12 lg:pt-10 lg:px-16" aria-label="Logo Header">
+                            {logoSection}
+                        </div>
+                        <div className={`fixed top-0 right-0 w-auto z-50 pointer-events-none transition-all duration-300 pt-6 pr-8 md:pt-8 md:pr-12 lg:pt-10 lg:pr-16`}>
+                            {buttonSection}
+                        </div>
+                    </>
+                ) : (
+                    <header
+                        className={isScrolled
+                            ? "fixed top-4 left-1/2 -translate-x-1/2 w-[90%] max-w-7xl bg-white rounded-2xl shadow-lg border border-white/20 flex items-center justify-between px-6 py-1 z-50"
+                            : "absolute top-0 left-0 w-full flex items-center justify-between z-50 pointer-events-none pt-6 px-8 md:pt-8 md:px-12 lg:pt-10 lg:px-16"
+                        }
+                        aria-label="Main navigation header"
                     >
-                        {customLogo || (
-                            <Image src={logoUrl} alt="Logo" width={32} height={32} className="h-8 w-auto object-contain" />
-                        )}
-                    </div>
-                    )}
-
-                    <button
-                        ref={toggleBtnRef}
-                        style={isScrolled ? { right: 0, top: 0 } : {}}
-                        className={`sm-toggle relative inline-flex items-center gap-[0.3rem] border-0 cursor-pointer font-medium leading-none overflow-visible pointer-events-auto ${open
-                            ? 'bg-transparent !text-black'
-                            : '!bg-[#0a192f] !text-white px-6 py-2.5 rounded-full shadow-lg hover:!bg-[#112240] transition-colors duration-300'
-                            } ml-auto ${!isScrolled ? '-translate-y-1' : ''}`}
-                        aria-label={open ? 'Close menu' : 'Open menu'}
-                        aria-expanded={open}
-                        aria-controls="staggered-menu-panel"
-                        onClick={toggleMenu}
-                        type="button"
-                    >
-                        <span
-                            ref={textWrapRef}
-                            className="sm-toggle-textWrap relative inline-block h-[1em] overflow-hidden whitespace-nowrap w-[var(--sm-toggle-width,auto)] min-w-[var(--sm-toggle-width,auto)]"
-                            aria-hidden="true"
-                        >
-                            <span ref={textInnerRef} className="sm-toggle-textInner flex flex-col leading-none">
-                                {textLines.map((l, i) => (
-                                    <span className="sm-toggle-line block h-[1em] leading-none" key={i}>
-                                        {l}
-                                    </span>
-                                ))}
-                            </span>
-                        </span>
-
-                        <span
-                            ref={iconRef}
-                            className="sm-icon relative w-[14px] h-[14px] shrink-0 inline-flex items-center justify-center [will-change:transform]"
-                            aria-hidden="true"
-                        >
-                            <span
-                                ref={plusHRef}
-                                className="sm-icon-line absolute left-1/2 top-1/2 w-full h-[2px] bg-current rounded-[2px] -translate-x-1/2 -translate-y-1/2 [will-change:transform]"
-                            />
-                            <span
-                                ref={plusVRef}
-                                className="sm-icon-line sm-icon-line-v absolute left-1/2 top-1/2 w-full h-[2px] bg-current rounded-[2px] -translate-x-1/2 -translate-y-1/2 [will-change:transform]"
-                            />
-                        </span>
-                    </button>
-                </header>
+                        {logoSection}
+                        {buttonSection}
+                    </header>
+                )}
 
                 <aside
                     id="staggered-menu-panel"

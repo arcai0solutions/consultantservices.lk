@@ -132,6 +132,7 @@ export default function HomeClient({ children }: HomeClientProps) {
                             openMenuButtonColor="#000000"
                             customLogo={logoContent}
                             isScrolled={isScrolled}
+                            splitNavigation={true}
                         />
                     </div>
                 </section>
