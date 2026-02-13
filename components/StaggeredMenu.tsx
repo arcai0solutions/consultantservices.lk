@@ -488,10 +488,10 @@ const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
 
                 {splitNavigation ? (
                     <>
-                        <div className="absolute top-0 left-0 w-full flex items-center justify-between z-50 pointer-events-none pt-6 px-8 md:pt-8 md:px-12 lg:pt-10 lg:px-16" aria-label="Logo Header">
+                        <div className="absolute top-0 left-0 w-full flex items-center justify-between z-50 pointer-events-none pt-4 px-6 md:pt-6 md:px-10 lg:pt-8 lg:px-14" aria-label="Logo Header">
                             {logoSection}
                         </div>
-                        <div className={`fixed top-0 right-0 w-auto z-50 pointer-events-none transition-all duration-300 pt-6 pr-8 md:pt-8 md:pr-12 lg:pt-10 lg:pr-16`}>
+                        <div className={`fixed top-0 right-0 w-auto z-50 pointer-events-none transition-all duration-300 pt-8 pr-6 md:pt-11 md:pr-10 lg:pt-15 lg:pr-14`}>
                             {buttonSection}
                         </div>
                     </>
